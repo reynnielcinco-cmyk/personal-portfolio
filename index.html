@@ -37,6 +37,7 @@
           radial-gradient(circle at top left, rgba(56, 189, 248, 0.2), transparent 28%),
           linear-gradient(135deg, var(--bg), #0f1f33 90%);
         line-height: 1.6;
+        overflow-x: hidden;
       }
 
       a {
@@ -89,6 +90,13 @@
         align-items: center;
         min-height: 88vh;
         padding: 4rem 0 3rem;
+      }
+
+      .hero-name {
+        margin: 0 0 0.5rem;
+        font-size: clamp(1.35rem, 2.8vw, 1.8rem);
+        color: var(--accent);
+        font-weight: 700;
       }
 
       .eyebrow {
@@ -373,15 +381,18 @@
         text-align: center;
       }
 
-      @media (max-width: 860px) {
+      @media (max-width: 900px) {
         .hero,
         .about-grid,
-        .projects {
+        .projects,
+        .skills,
+        .certificates {
           grid-template-columns: 1fr;
         }
 
-        .skills {
-          grid-template-columns: 1fr;
+        .hero {
+          min-height: auto;
+          padding: 3rem 0 2rem;
         }
       }
 
@@ -391,13 +402,44 @@
           gap: 0.75rem;
         }
 
+        .nav-links {
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 0.7rem 1rem;
+          font-size: 0.95rem;
+        }
+
         .hero {
-          min-height: auto;
           padding-top: 2rem;
+          gap: 1.5rem;
+        }
+
+        .hero-actions {
+          flex-direction: column;
+        }
+
+        .btn {
+          width: 100%;
+        }
+
+        .avatar {
+          width: 140px;
+          height: 140px;
         }
 
         .stats {
           grid-template-columns: 1fr;
+        }
+
+        .section-title {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.25rem;
+        }
+
+        .contact-links a {
+          width: 48px;
+          height: 48px;
         }
       }
     </style>
@@ -422,9 +464,7 @@
     <main id="home">
       <section class="container hero">
         <div>
-         <div>
-           <h2 style="margin: 0 0 0.5rem; font-size: 4rem; color: white(--accent);">Reynniel B. Cinco</h2>
-         </div>
+          <h2 class="hero-name">Reynniel B. Cinco</h2>
           <div class="eyebrow">Full Stack Developer & Creative Designer</div>
           <h1>Crafting scalable web applications with intuitive design.</h1>
           <p>
